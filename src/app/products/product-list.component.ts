@@ -80,6 +80,11 @@ export class ProductListComponent implements OnInit {
       this.listFilter = 'cart';
     }
 
+
+    onRatingClicked(message: string): void{
+      this.pageTitle ='Product List: ' + message;
+    }
+
     toggleImage(): void {
       this.showImage = !this.showImage;
     }
@@ -93,4 +98,5 @@ export class ProductListComponent implements OnInit {
       return this.products.filter( (p: IProduct) => 
                 p.productName.toLocaleLowerCase().indexOf(filterBy) !== -1 );
     }
+
 }
